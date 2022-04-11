@@ -3,7 +3,7 @@ require_once __DIR__.'/includes/config.php';
 
 $form = new es\fdi\ucm\aw\FormularioEquipo();
 
-$tituloPagina = 'Nuevo Jugador';
+$tituloPagina = 'Nuevo Equipo';
 $contenidoPrincipal = <<<EOF
 <div class="move">
 		<h1>Añadir nuevo equipo</h1>

@@ -3,7 +3,7 @@ require_once __DIR__.'/includes/config.php';
 
 $form = new es\fdi\ucm\aw\FormularioClasificacion();
 
-$tituloPagina = 'Nuevo Jugador';
+$tituloPagina = 'Nueva Clasificacion';
 $contenidoPrincipal = <<<EOF
 <div class="move">
 		<h1>Añadir clasificacion</h1>

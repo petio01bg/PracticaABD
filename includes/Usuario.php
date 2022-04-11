@@ -116,25 +116,6 @@ class Usuario{
         
         return $result;
     }
-   
-    private static function borra($usuario){
-        return self::borraPorId($usuario->id);
-    }
-    
-    private static function borraPorId($idUsuario){
-        if (!$idUsuario) {
-            return false;
-        } 
-
-        $app = Aplicacion::getInstancia();
-        $conn = $app->conexionBd();
-        $query = sprintf("DELETE FROM Usuarios U WHERE U.id = %d", $idUsuario);
-        if ( ! $conn->query($query) ) {
-            error_log("Error BD ({$conn->errno}): {$conn->error}");
-            return false;
-        }
-        return true;
-    }
 
     public function getId(){
         return $this->id;
@@ -162,12 +143,5 @@ class Usuario{
 
     public function cambiaPassword($nuevoPassword){
         $this->password = self::hashPassword($nuevoPassword);
-    }
-    
-    public function borrate(){
-        if ($this->id !== null) {
-            return self::borra($this);
-        }
-        return false;
     }
 }
