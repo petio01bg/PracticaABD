@@ -1,49 +1,14 @@
 <?php
 
-//Inicio del procesamiento
-session_start();
+require_once __DIR__.'/includes/config.php';
 
-?>
+$form = new es\fdi\ucm\aw\FormularioRegistro();
+$htmlFormRegistro = $form->gestiona();
 
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="estilo.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Registro</title>
-</head>
-
-<body>
-
-<div id="contenedor">
-
-<?php
-	require("menu.php");
-?>
-
-<main>
-	<article>
+$tituloPagina = 'Registro';
+$contenidoPrincipal = <<<EOF
 		<h1>Registro de usuario</h1>
+		$htmlFormRegistro
+EOF;
 
-		<form action="procesarRegistro.php" method="POST">
-		<fieldset>
-			<div class="grupo-control">
-				<label>Nombre de usuario:</label> <input class="control" type="text" name="nombreUsuario" />
-			</div>
-			<div class="grupo-control">
-				<label>Nombre completo:</label> <input class="control" type="text" name="nombre" />
-			</div>
-			<div class="grupo-control">
-				<label>Password:</label> <input class="control" type="password" name="password" />
-			</div>
-			<div class="grupo-control"><label>Vuelve a introducir el Password:</label> <input class="control" type="password" name="password2" /><br /></div>
-			<div class="grupo-control"><button type="submit" name="registro">Registrar</button></div>
-		</fieldset>
-		</form>
-	</article>
-</main>
-
-</div>
-
-</body>
-</html>
+include __DIR__.'/includes/plantillas/plantilla.php';

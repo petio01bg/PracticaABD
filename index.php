@@ -1,45 +1,11 @@
 <?php
-$tituloPagina = "Inicio";
-?>
+//Inicio del procesamiento
+require_once __DIR__.'/includes/config.php';
 
-<!DOCTYPE html>
-<html lang='es'>
-	<head>
-        <meta charset="UTF-8">
-		<title><?= $tituloPagina ?></title>
-	</head>
-	<body>
+$tituloPagina = 'Portada';
+$contenidoPrincipal = <<<EOS
+<h1>Página principal</h1>
+<p> Aquí está el contenido público, visible para todos los usuarios. </p>
+EOS;
 
-			<div class = "wrapper">
-				<div class = "parallax_section">
-					<div class = "parallax_level1"></div>
-
-						<header>
-								<img id="logo" src= "<?=$app->resuelve(RUTA_IMGS."logo/Chestnut_Logo.png")?>" alt="logo" >
-								<h1> ChestNut Games </h1>
-									<?php
-										$_GET['type']="home";
-										$app->doInclude("/vistas/comun/header.php");
-									?>		
-						</header>
-						<p id="inicio">
-								Bienvenido a la mejor pagina de fútbol, resultados, noticias y jugadores.
-                    	</p> 
-				</div>
-
-				<div class = "parallax_section">
-					<div class = "parallax_level2"></div>
-						
-						<main>
-								<!-- Main Page -->
-						</main>
-
-						<footer>
-								<!-- Aqui ira el pie de pagina -->
-						</footer>
-
-				</div>
-			</div>
-
-	</body>
-</html>
+include __DIR__.'/includes/plantillas/plantilla.php';
