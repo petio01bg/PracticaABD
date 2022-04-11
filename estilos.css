@@ -79,37 +79,43 @@ tr:hover td{
 /*Barra de navegacion*/
 
 nav {
-	list-style: none;
 	padding: 5px;
 	width: 100%;
 	background: #092327;
 	height: 50px;
 }
-
-li a {
+nav ul{
+	list-style: none;
+}
+.menu li a {
 	text-decoration:none;
 	color: white;
 	display: block;
 } 
 
-li{
+.menu li{
 	display: inline-block;
 	padding: 0 20px;
 	text-align: center;
+	position: relative;
 }
 
-li a:hover {
+.menu li a:hover {
 	background: #ef8354;
 } 
 
-nav li ul{
+.submenu{
 	display:none;
 	position:absolute;
-	min-width: 140px;
-	right: 355px;
-	top: 182px;
+	background: #092735;
+	width: 130%;
 }
 
+.submenu li a{
+	padding: 10px;
+	display: block;
+	color: white;
+}
 nav li:hover > ul{
 	display: block;
 }
@@ -174,5 +180,3 @@ button:focus {
     color: #fff;
     outline: 0;
 }
-
-
