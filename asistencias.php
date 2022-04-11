@@ -27,7 +27,7 @@ else {
     $contenidoPrincipal = <<<EOF
 		<div>
    <h1 class = "move"> 
-   <span>MAXIMOS GOLEADORES</span>
+   <span>MAXIMOS ASISTENTES</span>
    <div class="liquid"></div>
    </h1>
     <table>
