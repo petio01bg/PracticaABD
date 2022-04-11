@@ -1,12 +1,12 @@
 <?php
 require_once __DIR__.'/includes/config.php';
 
-$form = new es\fdi\ucm\aw\FormularioLogin();
+$form = new es\fdi\ucm\aw\FormularioClasificacion();
 
-$tituloPagina = 'Login';
+$tituloPagina = 'Nuevo Jugador';
 $contenidoPrincipal = <<<EOF
 <div class="move">
-		<h1>Iniciar sesión</h1>
+		<h1>Añadir clasificacion</h1>
 </div>
 EOF;
 $htmlFormLogin = $form->gestiona();

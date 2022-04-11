@@ -3,12 +3,12 @@
 //Inicio del procesamiento
 require_once __DIR__.'/includes/config.php';
 
-$tituloPagina = 'Contenido';
+$tituloPagina = 'Goleadores';
 
 if (!isset($_SESSION["login"])) {
 	$contenidoPrincipal = <<<EOF
 	<h1>Usuario no registrado!</h1>
-	<p>Debes iniciar sesión para ver el contenido..</p>
+	<p>Debes iniciar sesión para ver los goleadores..</p>
 EOF;
 } 
 else {
@@ -38,7 +38,7 @@ else {
 	  <th>DORSAL</th>
 	  <th>GOLES</th>
       </tr>
-	 </thead>
+	</thead>
 EOF;
 
 for($i = 0; $i < $cont; $i++){

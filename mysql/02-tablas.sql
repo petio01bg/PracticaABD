@@ -47,6 +47,7 @@ CREATE TABLE `usuarios` (
   `nombreUsuario` varchar(15) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `rol` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -72,7 +73,7 @@ ALTER TABLE `clasificacion`
 ALTER TABLE `equipos`
   ADD PRIMARY KEY (`idEquipo`);
 
-ALTER TABLE `clasificacion`
+ALTER TABLE `equipos`
   MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 ALTER TABLE `jugadores`

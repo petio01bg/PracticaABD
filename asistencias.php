@@ -3,12 +3,12 @@
 //Inicio del procesamiento
 require_once __DIR__.'/includes/config.php';
 
-$tituloPagina = 'Contenido';
+$tituloPagina = 'Asistencias';
 
 if (!isset($_SESSION["login"])) {
 	$contenidoPrincipal = <<<EOF
 	<h1>Usuario no registrado!</h1>
-	<p>Debes iniciar sesión para ver el contenido..</p>
+	<p>Debes iniciar sesión para ver las asistenacias..</p>
 EOF;
 } 
 else {

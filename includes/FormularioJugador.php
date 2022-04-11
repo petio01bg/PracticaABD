@@ -26,7 +26,7 @@ class FormularioJugador extends Form{
         $errorSalvadas = self::createMensajeError($errores, 'salvadasJugador', 'span', array('class' => 'error'));
 
         $html = <<<EOF
-            <div class="content">
+        <div class="content">
                 $htmlErroresGlobales
                 <div class="grupo-control">
                     <p><label>Nombre del Jugador:</label> <input class="control" type="text" name="nombreJugador" value="$nombre" />$errorNombreJugador</p>
@@ -35,16 +35,16 @@ class FormularioJugador extends Form{
                     <p><label>Equipo:</label> <input class="control" type="text" name="equipo" value="$equipo" />$errorEquipo</p>
                 </div>
                 <div class="grupo-control">
-                   <p> <label>Dorsal:</label> <input class="control" type="number" name="dorsal" value="$dorsal" />$errorDorsal</p>
+                    <p><label>Dorsal:</label> <input class="control" type="text" name="dorsal" value="$dorsal" />$errorDorsal</p>
                 </div>
                 <div class="grupo-control">
-                    <p><label>Goles:</label> <input class="control" type="number" name="golesJugador" value="$goles" />$errorGoles</p>
+                    <p><label>Goles:</label> <input class="control" type="text" name="golesJugador" value="$goles" />$errorGoles</p>
                 </div>
                 <div class="grupo-control">
-                    <p><label>Asistencias:</label> <input class="control" type="number" name="asistenciasJugador" value="$asistencias" />$errorAsistencias</p>
+                    <p><label>Asistencias:</label> <input class="control" type="text" name="asistenciasJugador" value="$asistencias" />$errorAsistencias</p>
                 </div>
                 <div class="grupo-control">
-                    <p><label>Salvadas:</label> <input class="control" type="number" name="salvadasJugador" value="$salvadas" />$errorSalvadas</p>
+                    <p><label>Salvadas:</label> <input class="control" type="text" name="salvadasJugador" value="$salvadas" />$errorSalvadas</p>
                 </div>
                 <div class="grupo-control"><button type="submit" name="registro">Añadir jugador</button></div>
             </div>
@@ -70,11 +70,11 @@ class FormularioJugador extends Form{
 
         $dorsal = $datos['dorsal'] ?? null;
         
-        if ( empty($dorsal) || mb_strlen($nombreJugador) < 1 ) {
+        if ( empty($dorsal) || mb_strlen($dorsal) < 1 ) {
             $result['dorsal'] = "El dorsal del Jugador esta vacío";
         }
 
-        if ( mb_strlen($nombreJugador) > 99 ) {
+        if ( mb_strlen($dorsal) > 99 ) {
             $result['dorsal'] = "El dorsal del Jugador debe de ser entre 1 y 99";
         }
 
@@ -99,7 +99,7 @@ class FormularioJugador extends Form{
         if (count($result) === 0) {
             $jugador = Jugador::crea($nombreJugador, $equipo, $dorsal, $golesJugador, $asistenciasJugador, $salvadasJugador);
             if (!$jugador) {
-                $result[] = "El jugador ya existe";
+                $result[] = "El jugador ya se ha actualizado";
             } else {
                 $result = 'index.php';
             }

@@ -5,9 +5,9 @@ $form = new es\fdi\ucm\aw\FormularioJugador();
 
 $tituloPagina = 'Nuevo Jugador';
 $contenidoPrincipal = <<<EOF
-	<div class= "move">
+<div class="move">
 		<h1>Añadir nuevo jugador</h1>
-	</div>
+</div>
 EOF;
 $htmlFormLogin = $form->gestiona();
 $contenidoPrincipal .= $htmlFormLogin;
