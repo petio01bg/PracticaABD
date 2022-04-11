@@ -26,28 +26,28 @@ class FormularioJugador extends Form{
         $errorSalvadas = self::createMensajeError($errores, 'salvadasJugador', 'span', array('class' => 'error'));
 
         $html = <<<EOF
-            <fieldset>
+            <div class="content">
                 $htmlErroresGlobales
                 <div class="grupo-control">
-                    <label>Nombre del Jugador:</label> <input class="control" type="text" name="nombreJugador" value="$nombre" />$errorNombreJugador
+                    <p><label>Nombre del Jugador:</label> <input class="control" type="text" name="nombreJugador" value="$nombre" />$errorNombreJugador</p>
                 </div>
                 <div class="grupo-control">
-                    <label>Equipo:</label> <input class="control" type="text" name="equipo" value="$equipo" />$errorEquipo
+                    <p><label>Equipo:</label> <input class="control" type="text" name="equipo" value="$equipo" />$errorEquipo</p>
                 </div>
                 <div class="grupo-control">
-                    <label>Dorsal:</label> <input class="control" type="number" name="dorsal" value="$dorsal" />$errorDorsal
+                   <p> <label>Dorsal:</label> <input class="control" type="number" name="dorsal" value="$dorsal" />$errorDorsal</p>
                 </div>
                 <div class="grupo-control">
-                    <label>Goles:</label> <input class="control" type="number" name="golesJugador" value="$goles" />$errorGoles
+                    <p><label>Goles:</label> <input class="control" type="number" name="golesJugador" value="$goles" />$errorGoles</p>
                 </div>
                 <div class="grupo-control">
-                    <label>Asistencias:</label> <input class="control" type="number" name="asistenciasJugador" value="$asistencias" />$errorAsistencias
+                    <p><label>Asistencias:</label> <input class="control" type="number" name="asistenciasJugador" value="$asistencias" />$errorAsistencias</p>
                 </div>
                 <div class="grupo-control">
-                    <label>Salvadas:</label> <input class="control" type="number" name="salvadasJugador" value="$salvadas" />$errorSalvadas
+                    <p><label>Salvadas:</label> <input class="control" type="number" name="salvadasJugador" value="$salvadas" />$errorSalvadas</p>
                 </div>
                 <div class="grupo-control"><button type="submit" name="registro">Añadir jugador</button></div>
-            </fieldset>
+            </div>
         EOF;
         return $html;
     }

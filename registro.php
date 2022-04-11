@@ -7,7 +7,9 @@ $htmlFormRegistro = $form->gestiona();
 
 $tituloPagina = 'Registro';
 $contenidoPrincipal = <<<EOF
+	<div class="move">
 		<h1>Registro de usuario</h1>
+	</div>
 		$htmlFormRegistro
 EOF;
 

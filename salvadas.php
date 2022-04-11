@@ -31,12 +31,14 @@ else {
    <div class="liquid"></div>
    </h1>
     <table>
+	<thead>
       <tr>
       <th>JUGADOR</th>
       <th>EQUIPO</th>
 	  <th>DORSAL</th>
 	  <th>SALVADAS</th>
       </tr>
+	</thead>
 EOF;
 
 for($i = 0; $i < $cont; $i++){
