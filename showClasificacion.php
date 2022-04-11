@@ -49,6 +49,9 @@ EOF;
 for($i = 0; $i < $cont; $i++){
 	$equipo = \es\fdi\ucm\aw\Equipo::buscaEquipo($equipos[$i]);
     $clas = \es\fdi\ucm\aw\Clasificacion::buscaEquipoClasificacion($equipos[$i]);
+
+    if($equipo && $clas){
+
 	$nombre = $equipo->getNombre();
     $puntos = $clas->getPuntos();
     $ganados = $clas->getGanados();
@@ -73,7 +76,7 @@ for($i = 0; $i < $cont; $i++){
                 <td>{$diferencia}</td>
 			</tr>
 EOF;
-	
+    }
 }
 
 $contenidoPrincipal.=<<<EOF

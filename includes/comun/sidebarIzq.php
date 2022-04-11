@@ -18,9 +18,8 @@
 				<li><a href="newJugador.php">Añadir Jugador</a></li>
 				<li><a href="newEquipo.php">Añadir Equipo</a></li>
 				<li><a href="newClasificacion.php">Añadir Clasificacion</a></li>
-				<li><a href="">Submenu 3</a></li>
-				<li><a href="">Submenu 4</a></li>
-				<li><a href="">Submenu 5</a></li>
+				<li><a href="borraJugador.php">Borrar Jugador</a></li>
+				<li><a href="borraEquipo.php">Borrar Equipo</a></li>
 				</ul></li>
 			EOF;
 

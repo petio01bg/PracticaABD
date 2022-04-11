@@ -117,6 +117,36 @@ class Jugador{
         return $jugador;
     }
 
+    private static function borraJugador($nombreJugador, $equipo, $dorsal){
+        $app = Aplicacion::getInstancia();
+        $conn = $app->conexionBd();
+        $query = sprintf("DELETE FROM jugadores WHERE nombreJugador='$nombreJugador' AND equipo='$equipo' AND dorsal='$dorsal'", $conn->real_escape_string($nombreJugador),$conn->real_escape_string($equipo), $conn->real_escape_string($dorsal));
+        if ( ! $conn->query($query) ) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+            return false;
+        }
+        return true;
+    }
+
+    private static function borraJugadorEquipo($nombreEquipo){
+        $app = Aplicacion::getInstancia();
+        $conn = $app->conexionBd();
+        $query = sprintf("DELETE FROM jugadores WHERE equipo='$nombreEquipo'", $conn->real_escape_string($nombreEquipo));
+        if ( ! $conn->query($query) ) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+            return false;
+        }
+        return true;
+    }
+
+    public static function borra($nombreJugador, $equipo, $dorsal){
+        return self::borraJugador($nombreJugador, $equipo, $dorsal);
+    }
+
+    public static function borraEq($nombre){
+        return self::borraJugadorEquipo($nombre);
+    }
+
     public static function guarda($jugador){
         return self::inserta($jugador);
     }

@@ -76,6 +76,21 @@ class Equipo{
         return $equipo;
     }
 
+    private static function borraEquipo($id){
+        $app = Aplicacion::getInstancia();
+        $conn = $app->conexionBd();
+        $query = sprintf("DELETE FROM equipos WHERE idEquipo='$id'", $conn->real_escape_string($id));
+        if ( ! $conn->query($query) ) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+            return false;
+        }
+        return true;
+    }
+
+    public static function borra($id){
+        return self::borraEquipo($id);
+    }
+
     public static function guarda($equipo){
         return self::inserta($equipo);
     }
