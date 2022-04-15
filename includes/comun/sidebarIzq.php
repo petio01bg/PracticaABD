@@ -11,7 +11,7 @@
 		<?php
 		
 		if(isset($_SESSION["login"])){
-			if($_SESSION['esAdmin']){
+			if(isset($_SESSION['esAdmin']) && $_SESSION["esAdmin"] == true){
 				$contenido = <<<EOF
 				<li><a href="">Operaciones</a>
 				<ul class="submenu">

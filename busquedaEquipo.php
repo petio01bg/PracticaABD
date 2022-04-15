@@ -62,7 +62,7 @@ EOF;
     }
     else{
         $contenidoPrincipal = <<<EOF
-		    <h1>No se ha encontrado el equipo biscado</h1>
+		    <h1>No se ha encontrado el equipo buscado</h1>
 EOF;
     }
 }

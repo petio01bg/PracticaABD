@@ -61,7 +61,7 @@ class Usuario{
         if ($user) {
             return false;
         }
-        $user = new Usuario($nombreUsuario, $nombre, self::hashPassword($password), $rol);
+        $user = new Usuario($nombreUsuario, $nombre, self::hashPassword($password), $rol, $correo);
         return self::guarda($user);
     }
     
@@ -79,11 +79,12 @@ class Usuario{
     private static function inserta($usuario){
         $app = Aplicacion::getInstancia();
         $conn = $app->conexionBd();
-        $query=sprintf("INSERT INTO Usuarios(nombreUsuario, nombre, password, rol) VALUES('%s', '%s', '%s', '%s')"
+        $query=sprintf("INSERT INTO Usuarios(nombreUsuario, nombre, password, rol,correo) VALUES('%s', '%s', '%s', '%s','%s')"
             , $conn->real_escape_string($usuario->nombreUsuario)
             , $conn->real_escape_string($usuario->nombre)
             , $conn->real_escape_string($usuario->password)
-            , $conn->real_escape_string($usuario->rol));
+            , $conn->real_escape_string($usuario->rol)
+            , $conn->real_escape_string($usuario->correo));
         if ( $conn->query($query) ) {
             $usuario->id = $conn->insert_id;
         } else {

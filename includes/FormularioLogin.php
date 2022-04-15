@@ -49,10 +49,10 @@ class FormularioLogin extends Form{
             $usuario = Usuario::login($nombreUsuario, $password);
             if ( ! $usuario ) {
                 // No se da pistas a un posible atacante
-                $result[] = "El usuario o el password no coinciden";
+                $result[] = "El usuario o la contraseña no coinciden";
             } else {
                 $_SESSION['login'] = true;
-                $_SESSION['nombre'] = $usuario->getNombre();
+                $_SESSION['nombre'] = $usuario->getNombreUsuario();
                 $_SESSION['esAdmin'] = strcmp($usuario->getRol(), 'admin') == 0 ? true : false;
                 $result = 'index.php';
             }

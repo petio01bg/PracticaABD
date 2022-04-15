@@ -80,7 +80,7 @@ class FormularioRegistro extends Form{
                 $result[] = "El usuario ya existe";
             } else {
                 $_SESSION['login'] = true;
-                $_SESSION['nombre'] = $nombre;
+                $_SESSION['nombre'] = $nombreUsuario;
                 $result = 'index.php';
             }
         }
