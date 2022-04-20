@@ -43,14 +43,20 @@ class Clasificacion{
 
     public static function crea($idEquipo,$puntos,$ganados,$empatados,$perdidos,$golesmarcados,$golesrecibidos){
         $equipo = self::buscaEquipoClasificacion($idEquipo);
-        if($equipo){
+        $equip = Equipo::buscaEquipo($idEquipo);
+        if($equip){
+            if($equipo){
+                $equipo = new Clasificacion($idEquipo,$puntos,$ganados,$empatados,$perdidos,$golesmarcados,$golesrecibidos);
+                $eq = self::actualiza($equipo);
+                return false;
+            }
+    
             $equipo = new Clasificacion($idEquipo,$puntos,$ganados,$empatados,$perdidos,$golesmarcados,$golesrecibidos);
-            $eq = self::actualiza($equipo);
+            return self::guarda($equipo);
+        }
+        else{
             return false;
         }
-
-        $equipo = new Clasificacion($idEquipo,$puntos,$ganados,$empatados,$perdidos,$golesmarcados,$golesrecibidos);
-        return self::guarda($equipo);
     }
 
     private static function actualiza($equipo){
