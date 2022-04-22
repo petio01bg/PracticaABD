@@ -1,3 +1,3 @@
 <footer>
-	Pie de página
+	Espero que estes disfrutado de nuestra página web
 </footer>

@@ -9,6 +9,9 @@ function mostrarSaludo() {
 }
 ?>
 <header>
+	<div class="logo">
+		<img src='logo2.png' width="100" height="100">
+	</div>
 	<h1>FUTBOLMANIA</h1>
 	<div class="saludo">
 	<?php
