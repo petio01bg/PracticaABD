@@ -9,7 +9,7 @@ $contenidoPrincipal = <<<EOS
 Los máximos goleadores, la clasificación, los máximos asistentes y <color>mucho más</color></p>
 <p> Registrate en un nuestra página para poder ver toda la información, si ya lo estás logeate totalmete gratuito </p>
 <div align='center'>
-<img src='logo.png' width="400" height="400">
+<img src='img/logo.png' width="600" height="600">
 </div>
 EOS;
 
